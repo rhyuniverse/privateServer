@@ -3,7 +3,7 @@ function spr(a, b, v)
 end
 
 function harvest(seedID)
-    for k, v in pairs(getTiles()) do
+    for k, v in pairs(getTile()) do
         if GetTile(v.pos.x, v.pos.y).fg == seedID then
             FindPath(v.pos.x, v.pos.y)
             sleep(delay.harvest)
@@ -13,7 +13,7 @@ function harvest(seedID)
 end
 
 function plant(seedID)
-    for k, v in pairs(getTiles()) do
+    for k, v in pairs(getTile()) do
         if GetTile(v.pos.x, v.pos.y).fg == 0 and getTile(v.pos.x, v.pos.y + 1).fg ~= 0 then
             FindPath(v.pos.x, v.pos.y)
             sleep(delay.harvest)
